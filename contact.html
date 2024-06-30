@@ -1,264 +1,317 @@
-<html><head><base href="https://dutchcape.com/#contact">
-  <title>Dutch Cape - Contact Us</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-    :root {
-      --light-grey: #f5f7fa;
-      --light-blue: #e3f2fd;
-      --blue: #2196f3;
-      --dark-blue: #1976d2;
-      --white: #ffffff;
-      --text-color: #333333;
-      --background: var(--light-grey);
-      --card-background: var(--white);
-      --card-shadow: rgba(0, 0, 0, 0.115);
-    }
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--background);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    header {
-      background-color: var(--card-background);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.5rem 20px;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--dark-blue);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
-    .logo:hover {
-      color: var(--blue);
-    }
-    .logo-icon {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
-      fill: currentColor;
-      transition: fill 0.3s ease;
-    }
-    .logo-text {
-      font-family: 'Montserrat', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: color 0.3s ease;
-    }
-    .menu-toggle {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      z-index: 1001;
-    }
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background-color: var(--text-color);
-      margin: 2px 0;
-      transition: 0.4s;
-    }
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
-    }
-    .nav-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 250px;
-      height: 100vh;
-      background-color: var(--card-background);
-      padding-top: 80px;
-      transition: 0.3s;
-      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    }
-    .nav-menu.active {
-      right: 0;
-    }
-    .nav-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .nav-menu ul li {
-      margin: 20px 0;
-    }
-    .nav-menu ul li a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-      display: block;
-      padding: 10px 20px;
-    }
-    .nav-menu ul li a:hover {
-      color: var(--blue);
-    }
-    .contact-section {
-      max-width: 800px;
-      margin: 100px auto 0;
-      padding: 40px 20px;
-      background-color: var(--card-background);
-      border-radius: 10px;
-      box-shadow: 0 4px 6px var(--card-shadow);
-    }
-    .contact-section h1 {
-      color: var(--dark-blue);
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .contact-form {
-      display: grid;
-      gap: 20px;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-    .form-group label {
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
-    .form-group input,
-    .form-group textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-family: 'Montserrat', sans-serif;
-    }
-    .form-group textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-    .submit-btn {
-      background-color: var(--blue);
-      color: var(--white);
-      padding: 12px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-    .submit-btn:hover {
-      background-color: var(--dark-blue);
-    }
-    footer {
-      background-color: var(--light-blue);
-      color: var(--text-color);
-      text-align: center;
-      padding: 2rem 0;
-      margin-top: 4rem;
-    }
-  </style>
+<html><head><base href="https://wordle.websim.ai/">
+<title>Wordle - Minimalist Word Game</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  header {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  #home-container, #game-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  #home-container:hover, #game-container:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  }
+
+  #challenge-btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #6aaa64;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  #challenge-btn:hover {
+    background-color: #569c51;
+  }
+
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+
+  .tile {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+
+  #keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .key {
+    margin: 0 3px;
+    padding: 12px;
+    min-width: 30px;
+    text-align: center;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .key:hover {
+    background-color: #d0d0d0;
+  }
+
+  .correct {
+    background-color: #6aaa64;
+    color: white;
+    border-color: #6aaa64;
+  }
+
+  .present {
+    background-color: #c9b458;
+    color: white;
+    border-color: #c9b458;
+  }
+
+  .absent {
+    background-color: #787c7e;
+    color: white;
+    border-color: #787c7e;
+  }
+
+  .key.correct, .key.present, .key.absent {
+    color: white;
+  }
+
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  .tile.pop {
+    animation: pop 0.3s ease-in-out;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="https://dutchcape.com/" class="logo">
-        <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4-8c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4zm-2 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
-        </svg>
-        <span class="logo-text">Dutch Cape</span>
-      </a>
-      <div class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="nav-menu">
-        <ul>
-          <li><a href="https://dutchcape.com/#services">Services</a></li>
-          <li><a href="https://dutchcape.com/#about">About</a></li>
-          <li><a href="https://dutchcape.com/#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+    <h1>Wordle</h1>
   </header>
+  
+  <div id="home-container">
+    <p style="font-size: 1.1rem; line-height: 1.5; color: #555;">Are you ready to test your word-guessing skills?</p>
+    <button id="challenge-btn" style="background-color: #3498db; transition: all 0.3s ease;">Challenge Accepted</button>
+  </div>
 
-  <section class="contact-section">
-    <h1>Contact Us</h1>
-    <form class="contact-form" method="GET" action="https://dutchcape.com/submit-contact">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+  <div id="game-container" class="hidden">
+    <div id="grid">
+      <!-- 6 rows of 5 tiles each -->
+      <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+      <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+      <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+      <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+      <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+      <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
+    </div>
+    <div id="keyboard">
+      <div class="keyboard-row">
+        <button class="key">Q</button><button class="key">W</button><button class="key">E</button><button class="key">R</button><button class="key">T</button><button class="key">Y</button><button class="key">U</button><button class="key">I</button><button class="key">O</button><button class="key">P</button>
       </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+      <div class="keyboard-row">
+        <button class="key">A</button><button class="key">S</button><button class="key">D</button><button class="key">F</button><button class="key">G</button><button class="key">H</button><button class="key">J</button><button class="key">K</button><button class="key">L</button>
       </div>
-      <div class="form-group">
-        <label for="company">Company</label>
-        <input type="text" id="company" name="company">
+      <div class="keyboard-row">
+        <button class="key">ENTER</button><button class="key">Z</button><button class="key">X</button><button class="key">C</button><button class="key">V</button><button class="key">B</button><button class="key">N</button><button class="key">M</button><button class="key">⌫</button>
       </div>
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2024 Dutch Cape. All rights reserved.</p>
-  </footer>
+    </div>
+    <button id="skip-btn" style="margin-top: 20px; padding: 10px 20px; font-size: 1rem; background-color: #f39c12; color: white; border: none; border-radius: 5px; cursor: pointer; transition: all 0.3s ease;">SKIP</button>
+  </div>
 
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+    const words = ['APPLE', 'BRAVE', 'CACTUS', 'DANCE', 'EAGLE', 'FABLE', 'GRACE', 'HAPPY', 'IMAGE', 'JOKER'];
+    let targetWord = words[Math.floor(Math.random() * words.length)];
+    let currentRow = 0;
+    let currentTile = 0;
+    let gameOver = false;
+    let score = 0;
+    let bestScore = localStorage.getItem('bestScore') || 0;
 
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
+    const homeContainer = document.getElementById('home-container');
+    const gameContainer = document.getElementById('game-container');
+    const challengeBtn = document.getElementById('challenge-btn');
+    const tiles = document.querySelectorAll('.tile');
+    const keys = document.querySelectorAll('.key');
+
+    challengeBtn.addEventListener('click', () => {
+      homeContainer.classList.add('hidden');
+      gameContainer.classList.remove('hidden');
+      startGame();
     });
 
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('.nav-menu ul li a').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
+    function startGame() {
+      // Reset game state
+      currentRow = 0;
+      currentTile = 0;
+      gameOver = false;
+      targetWord = words[Math.floor(Math.random() * words.length)];
+      
+      // Clear tiles
+      tiles.forEach(tile => {
+        tile.textContent = '';
+        tile.className = 'tile';
       });
-    });
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+      // Reset keyboard
+      keys.forEach(key => {
+        key.className = 'key';
       });
+    }
+
+    keys.forEach(key => {
+      key.addEventListener('click', () => handleInput(key.textContent));
     });
 
-    // Add a class to navbar when scrolling
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header');
-      header.classList.toggle('scrolled', window.scrollY > 0);
+    document.addEventListener('keydown', (event) => {
+      if (gameOver || homeContainer.classList.contains('hidden') === false) return;
+      
+      if (event.key === 'Enter') {
+        handleInput('ENTER');
+      } else if (event.key === 'Backspace') {
+        handleInput('⌫');
+      } else if (event.key.match(/^[a-zA-Z]$/)) {
+        handleInput(event.key.toUpperCase());
+      }
     });
-  </script>
+
+    function handleInput(input) {
+      if (gameOver) return;
+      
+      if (input === '⌫') {
+        deleteLetter();
+      } else if (input === 'ENTER') {
+        checkWord();
+      } else if (currentTile < (currentRow + 1) * 5 && input.length === 1) {
+        addLetter(input);
+      }
+    }
+
+    function addLetter(letter) {
+      const tile = tiles[currentTile];
+      tile.textContent = letter;
+      tile.classList.add('pop');
+      setTimeout(() => tile.classList.remove('pop'), 300);
+      currentTile++;
+    }
+
+    function deleteLetter() {
+      if (currentTile > currentRow * 5) {
+        currentTile--;
+        tiles[currentTile].textContent = '';
+      }
+    }
+
+    function checkWord() {
+      if (currentTile === (currentRow + 1) * 5) {
+        const word = getCurrentWord();
+        updateTiles(word);
+        currentRow++;
+        if (word === targetWord) {
+          setTimeout(() => {
+            alert('Congratulations! You guessed the word!');
+            gameOver = true;
+          }, 500);
+        } else if (currentRow === 6) {
+          setTimeout(() => {
+            alert('Game over! The word was ' + targetWord);
+            gameOver = true;
+          }, 500);
+        }
+      }
+    }
+
+    function getCurrentWord() {
+      return Array.from(tiles)
+        .slice(currentRow * 5, (currentRow + 1) * 5)
+        .map(tile => tile.textContent)
+        .join('');
+    }
+
+    function updateTiles(guess) {
+      for (let i = 0; i < 5; i++) {
+        const tile = tiles[currentRow * 5 + i];
+        const letter = tile.textContent;
+        setTimeout(() => {
+          if (letter === targetWord[i]) {
+            tile.classList.add('correct');
+            updateKeyboard(letter, 'correct');
+          } else if (targetWord.includes(letter)) {
+            tile.classList.add('present');
+            updateKeyboard(letter, 'present');
+          } else {
+            tile.classList.add('absent');
+            updateKeyboard(letter, 'absent');
+          }
+        }, i * 100);
+      }
+    }
+
+    function updateKeyboard(letter, status) {
+      const key = Array.from(keys).find(key => key.textContent === letter);
+      if (key) {
+        key.classList.add(status);
+      }
+    }
+</script>
 </body></html>
