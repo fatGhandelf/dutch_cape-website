@@ -1,308 +1,284 @@
-<html><head><base href="https://dutchcape.com/">
-  <title>Dutch Cape - AI-Driven Digital Marketing Solutions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-    :root {
-      --light-grey: #f5f7fa;
-      --light-blue: #e3f2fd;
-      --blue: #2196f3;
-      --dark-blue: #1976d2;
-      --white: #ffffff;
-      --text-color: #333333;
-      --background: var(--light-grey);
-      --card-background: var(--white);
-      --card-shadow: rgba(0, 0, 0, 0.115);
-    }
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--background);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    header {
-      background-color: var(--card-background);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.5rem 20px;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--dark-blue);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
-    .logo-icon {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
-      fill: var(--dark-blue);
-    }
-    .logo-text {
-      font-family: 'Montserrat', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    nav ul {
-      display: flex;
-      list-style: none;
-      align-items: center;
-      padding: 0;
-      margin: 0;
-    }
-    nav ul li {
-      margin-left: 20px;
-    }
-    nav ul li a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover {
-      color: var(--blue);
-    }
-    .hero {
-      background-color: var(--light-blue);
-      padding: 120px 0 80px;
-      text-align: center;
-    }
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--dark-blue);
-    }
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      color: var(--text-color);
-    }
-    .cta-button {
-      display: inline-block;
-      background-color: var(--blue);
-      color: var(--white);
-      padding: 12px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-    .cta-button:hover {
-      background-color: var(--dark-blue);
-    }
-    .services {
-      max-width: 1200px;
-      margin: 4rem auto;
-      padding: 0 20px;
-    }
-    .services h2 {
-      text-align: center;
-      margin-bottom: 3rem;
-      font-size: 2.2rem;
-      color: var(--dark-blue);
-    }
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    .service-card {
-      background-color: var(--card-background);
-      border-radius: 10px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 4px 6px var(--card-shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px var(--card-shadow);
-    }
-    .service-card img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 1rem;
-      border-radius: 15px;
-    }
-    .service-card h3 {
-      margin-bottom: 1rem;
-      color: var(--blue);
-    }
-    footer {
-      background-color: var(--light-blue);
-      color: var(--text-color);
-      text-align: center;
-      padding: 2rem 0;
-      margin-top: 4rem;
-    }
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background-color: var(--text-color);
-      margin: 2px 0;
-      transition: 0.4s;
-    }
-    @media screen and (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: var(--card-background);
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      }
-      nav ul.show {
-        display: flex;
-      }
-      nav ul li {
-        margin: 10px 0;
-      }
-      .menu-toggle {
-        display: flex;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      .services h2 {
-        font-size: 1.8rem;
-      }
-    }
-    
-    /* Add this new style for the pulsating logo */
-    .logo-icon {
-      animation: pulse 3s infinite;
-    }
-    
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-  </style>
+<html><head><base href="https://websim.ai/type-tutor" />
+<title>TypeMaster: Interactive Touch Typing Tutor</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    margin: 0;
+  }
+  h1 {
+    color: #4CAF50;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  }
+  #keyboard {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .key {
+    width: 50px;
+    height: 50px;
+    background-color: #3a3a3a;
+    border: 1px solid #505050;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+    color: #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .key.active {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.7);
+  }
+  #exercise {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  #user-input {
+    font-size: 18px;
+    padding: 10px;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: #3a3a3a;
+    border: none;
+    border-radius: 5px;
+    color: #e0e0e0;
+  }
+  #feedback {
+    font-size: 18px;
+    font-weight: bold;
+    height: 24px;
+    margin-bottom: 20px;
+  }
+  #progress {
+    width: 100%;
+    background-color: #2a2a2a;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  #progress-bar {
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    transition: width 0.3s ease-in-out;
+  }
+  #stats {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .stat {
+    text-align: center;
+    background-color: #2a2a2a;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  .stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="#" class="logo">
-        <svg class="logo-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4-8c0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4 4 1.79 4 4zm-2 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z">
-  <animate attributename="opacity" values="1;0.5;1" dur="3s" repeatcount="indefinite">
-  <animate attributename="transform" attributetype="XML" type="scale" values="1;1.1;1" dur="3s" repeatcount="indefinite">
-</animate></animate></path>
-        </svg>
-        <span class="logo-text">Dutch Cape</span>
-      </a>
-      <div class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div class="hero-content">
-      <h1>AI-Driven Digital Marketing Solutions</h1>
-      <p>Empowering businesses to thrive in the AI-powered digital landscape</p>
-      <a href="contact.html" class="cta-button">Schedule a Consultation</a>
+  <h1>TypeMaster: Interactive Touch Typing Tutor</h1>
+  
+  <div id="keyboard">
+    <div class="row">
+      <div class="key">Q</div>
+      <div class="key">W</div>
+      <div class="key">E</div>
+      <div class="key">R</div>
+      <div class="key">T</div>
+      <div class="key">Y</div>
+      <div class="key">U</div>
+      <div class="key">I</div>
+      <div class="key">O</div>
+      <div class="key">P</div>
     </div>
-  </section>
-
-  <section class="services" id="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <img src="ai-targeting.png" alt="AI-Powered Targeting" width="80" height="80">
-        <h3>AI-Powered Targeting</h3>
-        <p>Leverage advanced machine learning algorithms to identify and reach your ideal B2B customers with unprecedented precision.</p>
-      </div>
-      <div class="service-card">
-        <img src="content-creation.png" alt="AI-Assisted Content Creation" width="80" height="80">
-        <h3>AI-Assisted Content Creation</h3>
-        <p>Create compelling, data-driven content that resonates with your target audience using state-of-the-art AI tools and analytics.</p>
-      </div>
-      <div class="service-card">
-        <img src="predictive-analytics.png" alt="Predictive Analytics" width="80" height="80">
-        <h3>Predictive Analytics</h3>
-        <p>Forecast industry trends and customer behavior to stay ahead of the curve and optimize your B2B marketing strategies.</p>
-      </div>
+    <div class="row">
+      <div class="key">A</div>
+      <div class="key">S</div>
+      <div class="key">D</div>
+      <div class="key">F</div>
+      <div class="key">G</div>
+      <div class="key">H</div>
+      <div class="key">J</div>
+      <div class="key">K</div>
+      <div class="key">L</div>
     </div>
-  </section>
+    <div class="row">
+      <div class="key">Z</div>
+      <div class="key">X</div>
+      <div class="key">C</div>
+      <div class="key">V</div>
+      <div class="key">B</div>
+      <div class="key">N</div>
+      <div class="key">M</div>
+    </div>
+  </div>
 
-  <footer>
-    <p>© 2023 Dutch Cape. All rights reserved.</p>
-  </footer>
+  <div id="exercise"></div>
+  <input type="text" id="user-input" autocomplete="off" autofocus>
+  <div id="feedback"></div>
+  
+  <div id="progress">
+    <div id="progress-bar">0%</div>
+  </div>
+
+  <div id="stats">
+    <div class="stat">
+      <div class="stat-value" id="wpm">0</div>
+      <div>WPM</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="accuracy">100%</div>
+      <div>Accuracy</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="time">0s</div>
+      <div>Time</div>
+    </div>
+  </div>
 
   <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+    const exercises = [
+      "The quick brown fox jumps over the lazy dog.",
+      "Pack my box with five dozen liquor jugs.",
+      "How vexingly quick daft zebras jump.",
+      "Sphinx of black quartz, judge my vow.",
+      "Two driven jocks help fax my big quiz.",
+      "Waltz, nymph, for quick jigs vex Bud.",
+      "Glib jocks quiz nymph to vex dwarf.",
+      "Jackdaws love my big sphinx of quartz.",
+      "The five boxing wizards jump quickly.",
+      "How quickly daft jumping zebras vex.",
+      "Quick zephyrs blow, vexing daft Jim.",
+      "Two golden lions attack three silver wolves.",
+      "A journey of a thousand miles begins with a single step.",
+      "All that glitters is not gold; often have you heard that told.",
+      "To be or not to be, that is the question.",
+      "Ask not what your country can do for you; ask what you can do for your country.",
+      "I have a dream that one day this nation will rise up.",
+      "That's one small step for man, one giant leap for mankind.",
+      "Elementary, my dear Watson.",
+      "May the Force be with you."
+    ];
+    
+    let currentExercise = "";
+    let progress = 0;
+    let startTime;
+    let errors = 0;
+    let timer;
+    let exerciseIndex = 0;
+    
+    function newExercise() {
+      currentExercise = exercises[exerciseIndex];
+      exerciseIndex = (exerciseIndex + 1) % exercises.length;
+      document.getElementById('exercise').textContent = currentExercise;
+      document.getElementById('user-input').value = '';
+      progress = 0;
+      errors = 0;
+      updateProgress();
+      startTime = new Date();
+      clearInterval(timer);
+      timer = setInterval(updateTime, 1000);
+      updateStats();
+      highlightNextKey();
+    }
+    
+    function updateProgress() {
+      const progressBar = document.getElementById('progress-bar');
+      progressBar.style.width = `${progress}%`;
+      progressBar.textContent = `${progress}%`;
+    }
+    
+    function updateTime() {
+      const timeElapsed = Math.floor((new Date() - startTime) / 1000);
+      document.getElementById('time').textContent = `${timeElapsed}s`;
+    }
+    
+    function updateStats() {
+      const timeElapsed = (new Date() - startTime) / 60000; // in minutes
+      const wordsTyped = document.getElementById('user-input').value.split(' ').length;
+      const wpm = Math.round(wordsTyped / timeElapsed) || 0;
+      document.getElementById('wpm').textContent = wpm;
+      
+      const accuracy = Math.round(((progress / 100 * currentExercise.length) - errors) / (progress / 100 * currentExercise.length) * 100) || 100;
+      document.getElementById('accuracy').textContent = `${accuracy}%`;
+    }
+    
+    function highlightNextKey() {
+      const userInput = document.getElementById('user-input').value;
+      const nextChar = currentExercise[userInput.length];
+      document.querySelectorAll('.key').forEach(key => {
+        key.classList.remove('active');
+        if (key.textContent.toLowerCase() === nextChar?.toLowerCase()) {
+          key.classList.add('active');
+        }
       });
+    }
+    
+    document.getElementById('user-input').addEventListener('input', function(e) {
+      const userInput = e.target.value;
+      const correctPart = currentExercise.substring(0, userInput.length);
+      
+      if (userInput === correctPart) {
+        document.getElementById('feedback').textContent = "Correct! Keep going!";
+        document.getElementById('feedback').style.color = "#4CAF50";
+        progress = Math.round((userInput.length / currentExercise.length) * 100);
+        updateProgress();
+        highlightNextKey();
+        
+        if (userInput === currentExercise) {
+          document.getElementById('feedback').textContent = "Great job! Press ENTER for next sentence.";
+          clearInterval(timer);
+        }
+      } else {
+        document.getElementById('feedback').textContent = "Oops! Try again.";
+        document.getElementById('feedback').style.color = "#FF5252";
+        errors++;
+      }
+      
+      updateStats();
     });
-
-    // Add a class to navbar when scrolling
-    window.addEventListener('scroll', function() {
-      const header = document.querySelector('header');
-      header.classList.toggle('scrolled', window.scrollY > 0);
+    
+    document.getElementById('user-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && this.value === currentExercise) {
+        newExercise();
+      }
     });
-
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navList = document.querySelector('nav ul');
-
-    menuToggle.addEventListener('click', () => {
-      navList.classList.toggle('show');
-    });
-
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('nav ul li a').forEach(link => {
-      link.addEventListener('click', () => {
-        navList.classList.remove('show');
-      });
-    });
+    
+    newExercise();
   </script>
 </body></html>
