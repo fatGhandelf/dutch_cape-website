@@ -233,7 +233,7 @@
                             <img src="cape_town_harbor.jpg" alt="Cape Town Harbor">
                         </div>
                         <div class="carousel-slide">
-                            <img src="dutch_harbour.jpg" alt="Dutch Cheeses">
+                            <img src="dutch_harbour.jpg" alt="Dutch Harbour">
                         </div>
                         <div class="carousel-slide">
                             <img src="/api/placeholder/800/300?text=South+African+Wines" alt="South African Wines">
@@ -287,7 +287,52 @@
     </div>
 
     <script>
-        // ... (carousel script remains unchanged)
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel-container');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevButton = document.querySelector('.carousel-button.prev');
+            const nextButton = document.querySelector('.carousel-button.next');
+
+            if (!carousel || slides.length === 0) {
+                console.error('Carousel container or slides not found');
+                return;
+            }
+
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                if (index < 0) {
+                    currentIndex = slides.length - 1;
+                } else if (index >= slides.length) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex = index;
+                }
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentIndex - 1);
+            }
+
+            if (prevButton) {
+                prevButton.addEventListener('click', prevSlide);
+            } else {
+                console.warn('Previous button not found');
+            }
+
+            if (nextButton) {
+                nextButton.addEventListener('click', nextSlide);
+            } else {
+                console.warn('Next button not found');
+            }
+
+            setInterval(nextSlide, 5000);
+        });
     </script>
 </body>
 </html>
