@@ -13,6 +13,7 @@
             --text-color: #333333;
             --text-color-dark: #1a1a1a;
             --accent-color: #3498db;
+            --button-color: #64b5f6; /* Lighter blue for the button */
             --grey-light: #f0f0f0;
         }
         body, html {
@@ -188,18 +189,21 @@
             display: block;
             width: fit-content;
             margin: 2rem auto;
-            background-color: var(--accent-color);
+            background-color: var(--button-color);
             color: white;
             padding: 0.75rem 1.5rem;
-            border-radius: 4px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 300;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             letter-spacing: 0.5px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .btn:hover {
-            background-color: #2980b9;
+            background-color: #90caf9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
         .outside-ribbon {
             color: var(--text-color-dark);
