@@ -1,342 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dutch Cape Trading Company</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&family=Playfair+Display:wght@700&display=swap');
-        
-        :root {
-            --background-color: #e6f3ff;
-            --ribbon-color: #ffffff;
-            --text-color: #333333;
-            --text-color-dark: #1a1a1a;
-            --accent-color: #3498db;
-            --button-color: #64b5f6; /* Lighter blue for the button */
-            --grey-light: #f0f0f0;
-        }
-        body, html {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 300;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-        .ribbon {
-            background-color: var(--ribbon-color);
-            max-width: 800px;
-            margin: 2rem auto;
-            box-shadow: 0 0 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-            border-radius: 20px;
-        }
-        header {
-            background-color: var(--ribbon-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-            text-align: center;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-        }
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 400;
-            color: var(--text-color);
-            text-decoration: none;
-            letter-spacing: 2px;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        .logo .stylized {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 3rem;
-            color: var(--accent-color);
-        }
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 300;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
-        main {
-            padding: 0 2rem;
-        }
-        section {
-            padding: 2rem 0;
-            text-align: center;
-        }
-        h1, h2, h3 {
-            font-weight: 300;
-            line-height: 1.2;
-            letter-spacing: 0.5px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin: 0 0 1rem;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-        h3 {
-            font-size: 1.5rem;
-        }
-        p {
-            font-weight: 300;
-        }
-        .image-carousel {
-            position: relative;
-            width: calc(100% + 4rem);
-            margin-left: -2rem;
-            height: 300px;
-            overflow: hidden;
-        }
-        .carousel-container {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .carousel-slide {
-            min-width: 100%;
-            height: 300px;
-        }
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-        }
-        .carousel-button:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-        .carousel-button.prev {
-            left: 10px;
-        }
-        .carousel-button.next {
-            right: 10px;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-        .product-card {
-            background-color: var(--grey-light);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .product-card h3 {
-            margin-top: 0;
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .social-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 300;
-            transition: color 0.3s ease;
-        }
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
-        footer {
-            background-color: var(--grey-light);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
-        .btn {
-            display: block;
-            width: fit-content;
-            margin: 2rem auto;
-            background-color: var(--button-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 300;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            letter-spacing: 0.5px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .btn:hover {
-            background-color: #90caf9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        .outside-ribbon {
-            color: var(--text-color-dark);
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-        }
-    </style>
+<html><head><base href="https://cluvermarkotter.law/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Redirect</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+    }
+    .legal-emoji {
+      font-size: 100px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .legal-emoji:hover {
+      transform: scale(1.1);
+    }
+    .click-text {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-    <div class="ribbon">
-        <header>
-            <a href="#" class="logo">
-                <span class="stylized">D</span>UTCH <span class="stylized">C</span>APE
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+  <div class="container">
+    <a href="https://cluvermarkotter.law/" title="Visit Cluver Markotter Law">
+      <div class="legal-emoji">⚖️</div>
+      <div class="click-text">Click to visit Cluver Markotter Law</div>
+    </a>
+  </div>
 
-        <main>
-            <section id="home">
-                <h1>Premium Trading in Cape Town</h1>
-                <div class="image-carousel">
-                    <div class="carousel-container">
-                        <div class="carousel-slide">
-                            <img src="cape_town_harbor.jpg" alt="Cape Town Harbor">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="dutch_harbour.jpg" alt="Dutch Harbour">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="winelands.jpg" alt="South African Winelands">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="winelands_mountains.jpg" alt="Global Spices">
-                        </div>
-                    </div>
-                    <button class="carousel-button prev">&lt;</button>
-                    <button class="carousel-button next">&gt;</button>
-                </div>
-                <p>Dutch Cape Trading Company brings the finest global products to the heart of Cape Town.</p>
-                <a href="#products" class="btn">Explore Our Products</a>
-            </section>
-
-            <section id="products">
-                <h2>Our Products</h2>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <h3>Dutch Cheeses</h3>
-                        <p>Premium selection of Gouda, Edam, and artisanal Dutch cheeses.</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>South African Wines</h3>
-                        <p>Exquisite local wines from the renowned Cape Winelands region.</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Global Spices</h3>
-                        <p>Aromatic spices sourced from around the world, perfect for any cuisine.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contact">
-                <h2>Connect With Us</h2>
-                <p>Stay updated with our latest offerings and promotions:</p>
-                <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Twitter</a>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2024 Dutch Cape Trading Company. All rights reserved.</p>
-        </footer>
-    </div>
-    <div class="outside-ribbon">
-        <p>Quality products from around the globe</p>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const carousel = document.querySelector('.carousel-container');
-            const slides = document.querySelectorAll('.carousel-slide');
-            const prevButton = document.querySelector('.carousel-button.prev');
-            const nextButton = document.querySelector('.carousel-button.next');
-
-            if (!carousel || slides.length === 0) {
-                console.error('Carousel container or slides not found');
-                return;
-            }
-
-            let currentIndex = 0;
-
-            function showSlide(index) {
-                if (index < 0) {
-                    currentIndex = slides.length - 1;
-                } else if (index >= slides.length) {
-                    currentIndex = 0;
-                } else {
-                    currentIndex = index;
-                }
-                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-            }
-
-            function nextSlide() {
-                showSlide(currentIndex + 1);
-            }
-
-            function prevSlide() {
-                showSlide(currentIndex - 1);
-            }
-
-            if (prevButton) {
-                prevButton.addEventListener('click', prevSlide);
-            } else {
-                console.warn('Previous button not found');
-            }
-
-            if (nextButton) {
-                nextButton.addEventListener('click', nextSlide);
-            } else {
-                console.warn('Next button not found');
-            }
-
-            setInterval(nextSlide, 5000);
-        });
-    </script>
+  <script>
+    document.querySelector('.legal-emoji').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'https://cluvermarkotter.law/';
+    });
+  </script>
 </body>
 </html>
